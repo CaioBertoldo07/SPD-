@@ -1,0 +1,7 @@
+Producers,Consumers,Buffer,Produced Items,Remaining Items,Runtime (s)
+2,2,1,35,0,5.33
+2,2,5,35,0,5.37
+4,2,1,35,0,5.638
+4,2,5,35,0,5.264
+2,4,1,35,0,4.565
+2,4,5,35,0,4.591
