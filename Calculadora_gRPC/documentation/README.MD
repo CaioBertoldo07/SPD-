@@ -113,27 +113,6 @@ Você verá um menu interativo:
 ==================================================
 ```
 
-### 3️⃣ Executar Testes com grpcurl (Opcional)
-
-Primeiro, instale o grpcurl (se necessário):
-
-```bash
-# No Linux/Mac com Homebrew
-brew install grpcurl
-
-# Ou baixe do GitHub
-# https://github.com/fullstorydev/grpcurl/releases
-```
-
-Depois execute o script de testes:
-
-```bash
-chmod +x test_grpcurl.sh
-./test_grpcurl.sh
-```
-
----
-
 ## 🧪 Casos de Teste
 
 O cliente inclui uma suite automatizada de testes que valida:
@@ -150,34 +129,6 @@ O cliente inclui uma suite automatizada de testes que valida:
 10. ✅ **Números grandes** (999999 × 999999)
 
 Para executar os testes automatizados, escolha a opção **5** no menu do cliente.
-
----
-
-## 🔧 Testando com grpcurl
-
-### Listar serviços disponíveis:
-```bash
-grpcurl -plaintext localhost:50051 list
-```
-
-### Listar métodos do Calculator:
-```bash
-grpcurl -plaintext localhost:50051 list calculator.Calculator
-```
-
-### Testar operação de adição:
-```bash
-grpcurl -plaintext -d '{"num1": 10, "num2": 5}' \
-    localhost:50051 calculator.Calculator/Add
-```
-
-### Testar divisão por zero (deve retornar erro):
-```bash
-grpcurl -plaintext -d '{"num1": 10, "num2": 0}' \
-    localhost:50051 calculator.Calculator/Div
-```
-
----
 
 ## 📊 Arquitetura e Estratégias de Projeto
 
