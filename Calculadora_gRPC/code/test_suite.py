@@ -31,7 +31,6 @@ class TestRunner:
         print(f"\n{'='*60}")
         print(f"📋 Teste: {name}")
         print(f"{'='*60}")
-        print(f"Operação: {operation.__name__}")
         print(f"Entrada: num1={num1}, num2={num2}")
         
         try:
