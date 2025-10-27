@@ -1,0 +1,36 @@
+// Trabalho Prático 2 - RPC
+// Disciplina: Sistemas Paralelos e Distribuídos
+// Professor: Danielle Valente
+// Projeto: Calculadora Distribuída com gRPC
+
+syntax = "proto3";
+
+package calculator;
+
+// Serviço da Calculadora Distribuída
+service Calculator {
+  // Operação de Adição
+  rpc Add(OperationRequest) returns (OperationResponse);
+  
+  // Operação de Subtração
+  rpc Sub(OperationRequest) returns (OperationResponse);
+  
+  // Operação de Multiplicação
+  rpc Mul(OperationRequest) returns (OperationResponse);
+  
+  // Operação de Divisão (com validação de divisão por zero)
+  rpc Div(OperationRequest) returns (OperationResponse);
+}
+
+// Mensagem de requisição para operações binárias
+message OperationRequest {
+  double num1 = 1;  // Primeiro operando
+  double num2 = 2;  // Segundo operando
+}
+
+// Mensagem de resposta com resultado ou erro
+message OperationResponse {
+  double result = 1;      // Resultado da operação
+  string error = 2;       // Mensagem de erro (vazio se sucesso)
+  bool success = 3;       // Indicador de sucesso
+}
